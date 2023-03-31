@@ -12,18 +12,18 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-black py-4 md:py-6 lg:py-2">
+    <nav className="fixed w-full top-0 z-10 bg-transparent py-4 md:py-6 lg:py-2 shadow-2xl">
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
           <Image
             width={120}
             height={120}
-            src="/logo.png"
+            src="/boost.png"
             alt="Boost logo"
             className="rounded-full"
           />
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden px-4">
           {isMenuOpen ? (
             <button className="text-white text-xl" onClick={handleMenuToggle}>
               <FontAwesomeIcon icon={faTimes} />
