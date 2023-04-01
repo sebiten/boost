@@ -1,5 +1,10 @@
-import '@/styles/globals.css'
+import { BoostProvider } from "@/context/boostProvider";
+import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <BoostProvider>
+      <Component {...pageProps} />
+    </BoostProvider>
+  );
 }

@@ -1,5 +1,10 @@
+import About from "@/components/About";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Plan from "@/components/Plan";
+import PlansSection from "@/components/PlanSection";
+import { Reviews } from "@/components/Reviews";
+
 import Spinner from "@/components/Spinner";
 import React, { useState, useEffect } from "react";
 
@@ -10,7 +15,7 @@ export default function Home() {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
-  }, []);
+  }, [ ]);
 
   return (
     <>
@@ -20,6 +25,9 @@ export default function Home() {
         <>
           <Navbar />
           <Hero />
+          <PlansSection/>
+          <Plan/>
+          <Reviews/>
         </>
       )}
     </>
