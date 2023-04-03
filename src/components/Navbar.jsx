@@ -1,13 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSun, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useBoost } from "@/hooks/useBoost";
 
 function Navbar() {
-  const { isClicked, setIsClicked } = useBoost();
+  const { isClicked, setIsClicked, darkMode, setDarkMode } = useBoost();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -65,6 +65,22 @@ function Navbar() {
           )}
         </div>
         <div className="hidden md:flex items-center">
+          {darkMode ? (
+            <button
+              className="bg-transparent text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
+              onClick={() => setDarkMode(!darkMode)}
+            >
+              🌞
+            </button>
+          ) : (
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="bg-transparent text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
+            >
+              🌙
+            </button>
+          )}
+
           <Link
             href="#contact"
             className="bg-white text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"

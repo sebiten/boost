@@ -1,8 +1,15 @@
 import Image from "next/image";
 import React from "react";
 
-
-export const Review = ({ name, date, rating, review, male, female}) => {
+export const Review = ({
+  name,
+  date,
+  rating,
+  review,
+  male,
+  female,
+  darkMode,
+}) => {
   return (
     <div className="bg-red rounded-lg shadow-lg p-6">
       <div className="flex justify-between">
@@ -15,8 +22,24 @@ export const Review = ({ name, date, rating, review, male, female}) => {
             alt="avatar"
           />
         </div>
-        <h3 className="text-lg font-bold">{name}</h3>
-        <p>{date}</p>
+        <h3
+          className={
+            darkMode
+              ? "text-gray-100 text-lg font-semibold"
+              : "text-gray-900 text-lg font-semibold"
+          }
+        >
+          {name}
+        </h3>
+        <p
+          className={
+            darkMode
+              ? "text-gray-100 text-sm font-bold"
+              : "text-gray-900 text-sm font-bold"
+          }
+        >
+          {date}
+        </p>
       </div>
       <div className="flex items-center mt-2">
         {[...Array(rating)].map((_, i) => (
@@ -35,8 +58,15 @@ export const Review = ({ name, date, rating, review, male, female}) => {
           </svg>
         ))}
       </div>
-      <p className="mt-4">{review}</p>
+      <p
+        className={
+          darkMode
+            ? "text-gray-100 text-sm "
+            : "text-gray-900 text-sm "
+        }
+      >
+        {review}
+      </p>
     </div>
   );
-}
-
+};
