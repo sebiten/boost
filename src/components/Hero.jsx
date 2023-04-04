@@ -30,12 +30,12 @@ const Hero = () => {
             <Image
               data-aos="fade-right"
               data-aos-delay="100"
-              width={420}
-              height={500}
+              width={1920}
+              height={1080}
               src="/boost.png"
               priority={true}
               alt="Logo"
-              className="object-cover object-center h-full"
+              className="object-cover object-center sm:w-[400px] lg:w-[400px] xl:w-[500px]"
             />
           </div>
           <div className="sm:w-1/2 mx-auto my-auto flex flex-col gap-10 mb-8">

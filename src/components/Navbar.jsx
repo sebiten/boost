@@ -17,14 +17,34 @@ function Navbar() {
     <nav className="fixed w-full top-0 z-10 bg-transparent py-4 md:py-6 lg:py-2">
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center p-2">
-          <Image
-            onClick={() => setIsClicked(!isClicked)}
-            width={80}
-            height={80}
-            src="/logonav.png"
-            alt="Boost logo"
-            className="rounded-full opacity-80 hover:opacity-100 transition duration-300 cursor-pointer hover:animate-pulse"
-          />
+          {darkMode ? (
+            <Image
+              src="/logo.png"
+              alt="Logo Boost"
+              width={120}
+              height={50}
+              className="mx-auto invert
+               rounded-full
+               "
+              onClick={() => {
+                setIsClicked(!isClicked);
+              }}
+            />
+          ) : (
+            <Image
+              src="/boost.png"
+              alt="Logo Boost"
+              width={120}
+              height={50}
+              className="mx-auto
+              rounded-full
+
+            "
+              onClick={() => {
+                setIsClicked(!isClicked);
+              }}
+            />
+          )}
           {isClicked && (
             <div className="absolute top-0 left-24 mt-10 w-[400px] h-[300px] bg-black opacity-80 z-10 rounded-xl">
               <h3
@@ -34,7 +54,7 @@ function Navbar() {
                 Follow us on Instagram to see our latest work!
               </h3>
               <div className="flex justify-center">
-                <a
+                <h3
                   href="https://www.instagram.com/boost.digitals/"
                   target="_blank"
                   rel="noreferrer"
@@ -47,37 +67,64 @@ function Navbar() {
                     alt="Instagram logo"
                     className="rounded-full opacity-80 hover:opacity-100 transition duration-500 mt-6 transform cursor-pointer hover:animate-pulse hover:scale-110 "
                   />
-                </a>
+                </h3>
               </div>
               <p>Or tal with us on whatsapp</p>
             </div>
           )}
         </div>
         <div className="md:hidden px-4">
-          {isMenuOpen ? (
-            <button className="text-white text-xl" onClick={handleMenuToggle}>
-              <FontAwesomeIcon icon={faTimes} />
+          <div className="-mr-2 flex md:hidden">
+            <button
+              onClick={handleMenuToggle}
+              type="button"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
+              aria-label="Main menu"
+              aria-expanded="false"
+            >
+              <svg
+                className="block h-6 w-6"
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <svg
+                className="hidden h-6 w-6"
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </button>
-          ) : (
-            <button className="text-white text-xl" onClick={handleMenuToggle}>
-              <FontAwesomeIcon icon={faBars} />
-            </button>
-          )}
+          </div>
         </div>
         <div className="hidden md:flex items-center">
           {darkMode ? (
-            <button
-              className="bg-transparent text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              🌞
-            </button>
-          ) : (
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="bg-transparent text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
             >
               🌙
+            </button>
+          ) : (
+            <button
+              className="bg-transparent text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
+              onClick={() => setDarkMode(!darkMode)}
+            >
+              🌞
             </button>
           )}
 
@@ -102,7 +149,7 @@ function Navbar() {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden bg-black py-2">
+        <div className=" bg-black py-2">
           <Link
             href="#services"
             className="block text-white mx-4 my-2 font-semibold text-lg hover:text-gray-400 transition duration-300"

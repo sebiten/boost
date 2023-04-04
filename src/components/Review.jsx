@@ -11,7 +11,7 @@ export const Review = ({
   darkMode,
 }) => {
   return (
-    <div className="bg-red rounded-lg shadow-lg p-6">
+    <div className="bg-red rounded-lg shadow-2xl p-6">
       <div className="flex justify-between">
         <div className="flex items-center">
           <Image
@@ -25,8 +25,8 @@ export const Review = ({
         <h3
           className={
             darkMode
-              ? "text-gray-100 text-lg font-semibold"
-              : "text-gray-900 text-lg font-semibold"
+              ? "text-gray-900 text-lg font-semibold"
+              : "text-gray-100 text-lg font-semibold"
           }
         >
           {name}
@@ -34,8 +34,8 @@ export const Review = ({
         <p
           className={
             darkMode
-              ? "text-gray-100 text-sm font-bold"
-              : "text-gray-900 text-sm font-bold"
+            ? "text-gray-900 text-lg font-semibold"
+            : "text-gray-100 text-lg font-semibold"
           }
         >
           {date}
@@ -61,8 +61,8 @@ export const Review = ({
       <p
         className={
           darkMode
-            ? "text-gray-100 text-sm "
-            : "text-gray-900 text-sm "
+            ? "text-gray-800 text-sm "
+            : "text-gray-50 text-sm "
         }
       >
         {review}

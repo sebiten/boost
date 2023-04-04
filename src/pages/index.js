@@ -1,4 +1,6 @@
 import About from "@/components/About";
+import ContactForm from "@/components/Contacto";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Plan from "@/components/Plan";
@@ -28,6 +30,8 @@ export default function Home() {
           <PlansSection/>
           <Plan/>
           <Reviews/>
+          <ContactForm/>
+          <Footer/>
         </>
       )}
     </>

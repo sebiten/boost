@@ -2,7 +2,7 @@ import React from "react";
 
 const PlanCard = ({ plan }) => {
   return (
-    <div className={`rounded-lg shadow-md overflow-hidden ${plan.color}`}>
+    <div className={`rounded-lg shadow-2xl overflow-hidden ${plan.color}`}>
       <div
         className={`px-6 py-8 ${plan.textColor} flex flex-col justify-between h-full`}
       >
