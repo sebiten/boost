@@ -21,7 +21,7 @@ function Navbar() {
             <Image
               src="/logo.png"
               alt="Logo Boost"
-              width={120}
+              width={100}
               height={50}
               className="mx-auto invert
                rounded-full
@@ -34,7 +34,7 @@ function Navbar() {
             <Image
               src="/boost.png"
               alt="Logo Boost"
-              width={120}
+              width={110}
               height={50}
               className="mx-auto
               rounded-full
