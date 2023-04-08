@@ -1,6 +1,7 @@
 import React from "react";
 import PlanCard from "./PlanCard";
 import { useBoost } from "@/hooks/useBoost";
+import Chatbot from "./AskGpt";
 
 const plans = [
   {
@@ -59,6 +60,7 @@ const PlansSection = () => {
             <PlanCard key={index} plan={plan} />
           ))}
         </div>
+        <Chatbot />
       </div>
     </section>
   );
