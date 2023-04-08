@@ -1,47 +1,93 @@
-import { useState } from "react";
-import { askGpt } from "../../lib/openia";
+import { useCallback, useState } from "react";
+import axios from "axios";
+import OpenAI from "openai-api";
 
-export default function Chatbot() {
-  const [input, setInput] = useState("");
-  const [response, setResponse] = useState("");
+const Chat = () => {
+  const [inputValue, setInputValue] = useState("");
+  const [chatLog, setChatLog] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const addChatLogMessage = useCallback(
+    (message) => {
+      setChatLog((prevChatLog) => [
+        ...prevChatLog,
+        { type: "user", message: message },
+      ]);
+    },
+    [setChatLog]
+  );
 
-    try {
-      const res = await askGpt(input);
-      setResponse(res);
-    } catch (error) {
-      console.error(error);
-      setResponse("Error: No se pudo completar la solicitud.");
-    }
-  };
+  const sendMessage = useCallback(
+    (message) => {
+      setIsLoading(true);
+      axios
+        .post("/api/chat", {
+          model: "gpt-3.5-turbo-0301",
+          messages: [{ role: "user", content: message }],
+        })
+        .then((response) => {
+          const botMessage = response.data.choices[0].message.content;
+          addChatLogMessage(botMessage);
+        })
+        .catch((error) => {
+          console.error(error);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    },
+    [addChatLogMessage]
+  );
+
+  const handleSubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+      addChatLogMessage(inputValue);
+      sendMessage(inputValue);
+      setInputValue("");
+    },
+    [inputValue, addChatLogMessage, sendMessage]
+  );
 
   return (
-    <div className="max-w-md mx-auto m-24">
+    <div
+      className="flex flex-col my-32 mx-auto w-1/2 "
+    >
+      <div>
+        {chatLog.map((log, index) => (
+          <div key={index}>
+            {log.type === "user" ? (
+              <p>User: {log.message}</p>
+            ) : (
+              <p>Bot: {log.message}</p>
+            )}
+          </div>
+        ))}
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="w-full px-4 py-2 border rounded"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
         />
         <button
+          className="bg-blue-500
+        hover:bg-blue-700
+        text-white
+        font-bold
+        py-2
+        px-4
+        rounded
+        focus:outline-none
+        focus:shadow-outline"
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          disabled={isLoading}
         >
-          Enviar
+          {isLoading ? "Loading..." : "Send"}
         </button>
       </form>
-      <div className="bg-gray-200 p-4 rounded mt-4">
-        <p
-          className="text-gray-800 text-center
-text-xl
-        "
-        >
-          {response}
-        </p>
-      </div>
     </div>
   );
-}
+};
+
+export default Chat;
