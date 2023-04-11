@@ -1,8 +1,7 @@
 import React from "react";
 import PlanCard from "./PlanCard";
 import { useBoost } from "@/hooks/useBoost";
-import Chatbot from "./AskGpt";
-import Chat from "./AskGpt";
+
 
 const plans = [
   {
@@ -44,6 +43,21 @@ const plans = [
     color: "bg-yellow-500",
     textColor: "text-gray-800",
   },
+  {
+    title: "Plan Personalizado",
+    price: "$XXX",
+    features: [
+      "Creación de una landing page funcional y personalizada con hasta 20 secciones.",
+      "Animaciones y efectos visuales avanzados para hacer la página más atractiva.",
+      "Diseño de logotipo y manual de identidad visual (colores y tipografías).",
+      "5 revisiones antes de la entrega final.",
+      "Integración con plataformas de email marketing y redes sociales.",
+      "Servicio de seguimiento de métricas y análisis de resultados.",
+      "Servicio de mantenimiento y actualización de la página.",
+    ],
+    color: "bg-red-500",
+    textColor: "text-white",
+  }
 ];
 
 const PlansSection = () => {
@@ -65,7 +79,6 @@ const PlansSection = () => {
             <PlanCard key={index} plan={plan} />
           ))}
         </div>
-        <Chat />
       </div>
     </section>
   );

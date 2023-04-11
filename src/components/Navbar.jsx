@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useBoost } from "@/hooks/useBoost";
 
+
 function Navbar() {
   const { isClicked, setIsClicked, darkMode, setDarkMode } = useBoost();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,29 +48,18 @@ function Navbar() {
           )}
           {isClicked && (
             <div className="absolute top-0 left-24 mt-10 w-[400px] h-[300px] bg-black opacity-80 z-10 rounded-xl">
-              <h3
-                data-aos="fade-up"
-                className="text-white text-2xl text-center pt-20"
-              >
-                Follow us on Instagram to see our latest work!
+              <h3 className="text-white text-2xl text-center mt-10">
+                Hola! encontraste el chat secreto, puedes preguntar lo que sea.
               </h3>
-              <div className="flex justify-center">
+              <Chat />
+
+              <div className="flex">
                 <h3
                   href="https://www.instagram.com/boost.digitals/"
                   target="_blank"
                   rel="noreferrer"
-                >
-                  <Image
-                    data-aos="fade-up"
-                    width={100}
-                    height={100}
-                    src="/instagram.webp"
-                    alt="Instagram logo"
-                    className="rounded-full opacity-80 hover:opacity-100 transition duration-500 mt-6 transform cursor-pointer hover:animate-pulse hover:scale-110 "
-                  />
-                </h3>
+                ></h3>
               </div>
-              <p>Or tal with us on whatsapp</p>
             </div>
           )}
         </div>
