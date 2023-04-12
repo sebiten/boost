@@ -38,7 +38,7 @@ const Hero = () => {
               className="object-cover object-center sm:w-[400px] lg:w-[400px] xl:w-[500px]"
             />
           </div>
-          <div className="sm:w-1/2 mx-auto my-auto flex flex-col gap-10 mb-8">
+          <div className="sm:w-1/2 mx-auto my-auto flex flex-col gap-10 mb-14">
             <h1
               data-aos="fade-left"
               className="font-bold tracking-tight text-white text-2xl md:text-3xl"

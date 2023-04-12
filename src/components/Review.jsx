@@ -25,8 +25,8 @@ export const Review = ({
         <h3
           className={
             darkMode
-              ? "text-gray-900 text-lg font-semibold"
-              : "text-gray-100 text-lg font-semibold"
+              ? "text-gray-900 text-sm font-semibold"
+              : "text-gray-100 text-sm font-semibold"
           }
         >
           {name}
@@ -34,8 +34,8 @@ export const Review = ({
         <p
           className={
             darkMode
-            ? "text-gray-900 text-lg font-semibold"
-            : "text-gray-100 text-lg font-semibold"
+            ? "text-gray-900 text-sm font-semibold"
+            : "text-gray-100 text-sm font-semibold"
           }
         >
           {date}

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { useBoost } from "@/hooks/useBoost";
 
-
 function Navbar() {
   const { isClicked, setIsClicked, darkMode, setDarkMode } = useBoost();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,8 +50,6 @@ function Navbar() {
               <h3 className="text-white text-2xl text-center mt-10">
                 Hola! encontraste el chat secreto, puedes preguntar lo que sea.
               </h3>
-              <Chat />
-
               <div className="flex">
                 <h3
                   href="https://www.instagram.com/boost.digitals/"
@@ -101,7 +98,7 @@ function Navbar() {
             </button>
           </div>
         </div>
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center z-50">
           {darkMode ? (
             <button
               onClick={() => setDarkMode(!darkMode)}
@@ -124,12 +121,7 @@ function Navbar() {
           >
             Planes
           </Link>
-          <Link
-            href="#contact"
-            className="bg-white text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
-          >
-            Sobre nosotros
-          </Link>
+
           <Link
             href="#contact"
             className="bg-white text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
