@@ -27,6 +27,7 @@ export default function Home() {
         <>
           <Navbar />
           <Hero />
+          <About/>
           <PlansSection/>
           <Plan/>
           <Reviews/>
