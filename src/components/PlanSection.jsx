@@ -63,7 +63,7 @@ const plans = [
 const PlansSection = () => {
   const { darkMode } = useBoost();
   return (
-    <section className={darkMode ? "bg-gray-50 py-24" : "bg-gray-800 py-24"}>
+    <section className={darkMode ? "bg-gray-50 py-24 " : "bg-gray-800 py-24 "}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
           className={

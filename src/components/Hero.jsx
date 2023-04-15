@@ -24,8 +24,8 @@ const Hero = () => {
         </video>
         <div className="absolute inset-0 bg-black opacity-60"></div>
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:pt-44 lg:px-24 py-20 flex flex-col justify-center">
-        <div className="sm:flex sm:pt-32 lg:p-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:pt-64 lg:px-24 py-20 flex flex-col justify-center">
+        <div className="sm:flex sm:pt-64 lg:p-0">
           <div className="sm:w-1/2 mx-auto">
             <Image
               data-aos="fade-right"

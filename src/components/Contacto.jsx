@@ -38,7 +38,7 @@ const ContactForm = () => {
         darkMode ? "bg-gray-100 text-gray-800" : "bg-gray-800 text-gray-100"
       }
     >
-      <div className="flex w-full min-h-screen justify-center items-center">
+      <div className="flex w-full  justify-center items-center pb-24">
         <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-gray-700 w-full max-w-5xl p-5 sm:p-8 rounded-lg shadow-lg text-white overflow-hidden">
           <div className="flex flex-col md:flex-1 space-y-8 justify-between">
             <div>
