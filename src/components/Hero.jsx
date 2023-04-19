@@ -8,7 +8,7 @@ import { useBoost } from "@/hooks/useBoost";
 const Hero = () => {
   const { isClicked, setIsClicked } = useBoost();
   useEffect(() => {
-    Aos.init({ duration: 1200 });
+    Aos.init({ duration: 1000 });
   }, []);
 
   return (
