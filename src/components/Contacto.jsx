@@ -42,7 +42,7 @@ const ContactForm = () => {
         <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-gray-700 w-full max-w-5xl p-5 sm:p-8 rounded-lg shadow-lg text-white overflow-hidden">
           <div className="flex flex-col md:flex-1 space-y-8 justify-between">
             <div>
-              <h1 className="font-bold text-4xl tracking-wide">Contact Us</h1>
+              <h1 className="text-4xl tracking-wide">Contact Us</h1>
               <p className="pt-2 text-green-100 text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
                 molestiae cupiditate nulla facere

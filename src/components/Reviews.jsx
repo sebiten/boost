@@ -11,7 +11,7 @@ export const Reviews = () => {
     }>
       <div className="max-w-5xl mx-auto">
         <h2 className={
-          darkMode ? 'text-3xl font-extrabold text-gray-800 text-center my-2' : 'text-3xl font-extrabold text-gray-50 text-center my-2'
+          darkMode ? 'text-3xl  text-gray-800 text-center my-2' : 'text-3xl text-gray-50 text-center my-2'
         }>
          Que dicen nuestros clientes
         </h2>

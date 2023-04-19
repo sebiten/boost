@@ -46,17 +46,20 @@ function Navbar() {
             />
           )}
           {isClicked && (
-            <div className="absolute top-0 left-24 mt-10 w-[400px] h-[300px] bg-black opacity-80 z-10 rounded-xl">
+            <div className="absolute top-0 left-24 mt-10 w-[300px] h-[200px] bg-black opacity-80 z-10 rounded-xl">
               <h3 className="text-white text-2xl text-center mt-10">
-                Hola! encontraste el chat secreto, puedes preguntar lo que sea.
+                Siguenos en instagram!
               </h3>
-              <div className="flex">
-                <h3
-                  href="https://www.instagram.com/boost.digitals/"
-                  target="_blank"
-                  rel="noreferrer"
-                ></h3>
-              </div>
+              <Link
+                href='https://www.instagram.com/boost.digitals/'
+              className="flex items-center justify-center my-10 hover:scale-125">
+              <Image
+                height={50}
+                width={50}
+                alt="instagram-logo"
+                src="/instagram.webp"
+                />
+              </Link>
             </div>
           )}
         </div>
