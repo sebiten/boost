@@ -7,9 +7,6 @@ import { useBoost } from "@/hooks/useBoost";
 
 const Hero = () => {
   const { isClicked, setIsClicked } = useBoost();
-  useEffect(() => {
-    Aos.init({ duration: 1000 });
-  }, []);
 
   return (
     <section className="relative h-screen">
@@ -29,7 +26,7 @@ const Hero = () => {
     <div className="sm:w-1/2 mx-auto">
       <Image
         data-aos="fade-right"
-        data-aos-delay="100"
+        data-aos-delay="0"
         width={1920}
         height={1080}
         src="/boost.png"
