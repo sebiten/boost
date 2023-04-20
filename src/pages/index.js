@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 3100);
+    }, 3200);
   }, [ ]);
 
   return (

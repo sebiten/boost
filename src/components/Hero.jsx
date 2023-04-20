@@ -27,7 +27,7 @@ const Hero = () => {
               width={1920}
               height={1080}
               src="/boost.webp"
-              priority={true}
+              preload="auto"
               alt="Logo"
               className="object-cover object-center sm:w-[400px] lg:w-[400px] xl:w-[500px]"
             />

@@ -10,7 +10,7 @@ const Spinner = () => {
             <Image
               width={100}
               height={100}
-              src="/boost.png"
+              src="/boost.webp"
               priority={true}
               alt="Boost logo"
               className="rounded-full"
