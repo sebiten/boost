@@ -6,12 +6,7 @@ import { useBoost } from "@/hooks/useBoost";
 
 const AboutUsSection = () => {
   const { darkMode } = useBoost();
-  //   darkMode ? 'bg-gray-50 pt-16 px-4 sm:px-6 lg:px-8 ' : 'bg-gray-800 py-24 px-4 sm:px-6 lg:px-8'
-  // }>
-  //   <div className="max-w-5xl mx-auto">
-  //     <h2 className={
-  //       darkMode ? 'text-3xl font-extrabold text-gray-800 text-center my-2' : 'text-3xl font-extrabold text-gray-50 text-center my-2'
-  // bg-gray-100 py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto
+
   return (
     <section
       className={
@@ -38,7 +33,7 @@ const AboutUsSection = () => {
               darkMode ? "text-gray-800 text-3xl " : "text-gray-50 text-3xl"
             }
           >
-            About Us
+            Sobre nosotros
             <BsFillRocketTakeoffFill
               className="inline-block text-4xl text-gray-800"
               style={{ marginLeft: "1rem" }}
@@ -53,10 +48,7 @@ const AboutUsSection = () => {
           >
             ¡Bienvenido/a a nuestro sitio web! Somos un equipo apasionado
             dedicado a crear soluciones innovadoras y de vanguardia para
-            nuestros clientes. Con más de 10 años de experiencia en la
-            industria, hemos construido una reputación en la entrega de
-            resultados de alta calidad que superan las expectativas de nuestros
-            clientes. Nuestra misión es ayudar a las empresas a crecer y
+            nuestros clientes. Nuestra misión es ayudar a las empresas a crecer y
             prosperar en el mundo digital, ofreciendo una amplia gama de
             servicios que incluyen diseño web, desarrollo web, marketing digital
             y branding. Nuestro equipo de expertos utiliza las últimas

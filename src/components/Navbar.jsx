@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useBoost } from "@/hooks/useBoost";
+import { motion } from "framer-motion";
 
 function Navbar() {
   const { isClicked, setIsClicked, darkMode, setDarkMode } = useBoost();
@@ -16,7 +17,12 @@ function Navbar() {
   return (
     <nav className="fixed w-full top-0 z-10 bg-transparent py-4 md:py-6 lg:py-2">
       <div className="w-full flex items-center justify-between">
-        <div className="flex items-center p-2">
+        <motion.div
+         initial={{ opacity: 0}}
+         animate={{ opacity: 1 }}
+         transition={{ duration: 1 }}
+          className="flex items-center p-2"
+        >
           {darkMode ? (
             <Image
               src="/logo.webp"
@@ -51,18 +57,19 @@ function Navbar() {
                 Siguenos en instagram!
               </h3>
               <Link
-                href='https://www.instagram.com/boost.digitals/'
-              className="flex items-center justify-center my-10 hover:scale-125">
-              <Image
-                height={50}
-                width={50}
-                alt="instagram-logo"
-                src="/instagram.webp"
+                href="https://www.instagram.com/boost.digitals/"
+                className="flex items-center justify-center my-10 hover:scale-125"
+              >
+                <Image
+                  height={50}
+                  width={50}
+                  alt="instagram-logo"
+                  src="/instagram.webp"
                 />
               </Link>
             </div>
           )}
-        </div>
+        </motion.div>
         <div className="md:hidden px-4">
           <div className="-mr-2 flex md:hidden">
             <button

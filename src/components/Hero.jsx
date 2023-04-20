@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import Link from "next/link";
 import { useBoost } from "@/hooks/useBoost";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const { isClicked, setIsClicked } = useBoost();
@@ -13,7 +14,7 @@ const Hero = () => {
           autoPlay
           muted
           loop
-          preload="auto"
+          preload
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/bgvideo.mp4" type="video/mp4" />
@@ -22,17 +23,27 @@ const Hero = () => {
       </div>
       <div className="relative max-w-7xl mx-auto px-4 flex flex-col justify-center items-center">
         <div className="sm:flex items-center justify-center">
-          <div className="sm:w-1/2 mx-auto flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="sm:w-1/2 mx-auto flex items-center justify-center"
+          >
             <Image
               width={1920}
               height={1080}
               src="/boost.webp"
-              preload="auto"
+              priority="true"
               alt="Logo"
               className="object-cover object-center sm:w-[400px] lg:w-[400px] xl:w-[500px]"
             />
-          </div>
-          <div className="text-center mt-8">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0}}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="text-center mt-8"
+          >
             <h1 className="font-bold tracking-tight text-white text-xl md:text-2xl xl:w-[700px]">
               <span className="block xl:inline">
                 Acelera el crecimiento de tu empresa con nuestros servicios de
@@ -57,7 +68,7 @@ const Hero = () => {
                 Contactanos
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
