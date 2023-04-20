@@ -19,7 +19,7 @@ function Navbar() {
         <div className="flex items-center p-2">
           {darkMode ? (
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Logo Boost"
               width={100}
               height={50}
@@ -32,7 +32,7 @@ function Navbar() {
             />
           ) : (
             <Image
-              src="/boost.png"
+              src="/boost.webp"
               alt="Logo Boost"
               width={110}
               height={50}

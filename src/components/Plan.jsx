@@ -8,10 +8,10 @@ function Plan() {
       <div className="absolute inset-0 -z-10 bg-black opacity-70 h-full "></div>
       <div className="absolute inset-0 -z-20">
         <Image
-          className="h-full w-full object-left-top object-cover"
+          className="h-full w-full object-cover"
           width={1920}
           height={1080}
-          src="/tech.jpg"
+          src="/tech.webp"
           alt="hero"
         />
       </div>
