@@ -24,9 +24,9 @@ const Hero = () => {
       <div className="relative max-w-7xl mx-auto px-4 flex flex-col justify-center items-center">
         <div className="sm:flex items-center justify-center">
           <motion.div
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: -400 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 2 }}
             className="sm:w-1/2 mx-auto flex items-center justify-center"
           >
             <Image
