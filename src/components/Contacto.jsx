@@ -33,7 +33,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div
+    <section
+    id="contacto"
       className={
         darkMode ? "bg-gray-100 text-gray-800" : "bg-gray-800 text-gray-100"
       }
@@ -144,7 +145,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

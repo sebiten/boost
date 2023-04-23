@@ -126,14 +126,14 @@ function Navbar() {
           )}
 
           <Link
-            href="#contact"
+            href="#planes"
             className="bg-white text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
           >
             Planes
           </Link>
 
           <Link
-            href="#contact"
+            href="#contacto"
             className="bg-white text-black mx-4 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
           >
             Contacto
@@ -143,19 +143,13 @@ function Navbar() {
       {isMenuOpen && (
         <div className=" bg-black py-2">
           <Link
-            href="#services"
-            className="block text-white mx-4 my-2 font-semibold text-lg hover:text-gray-400 transition duration-300"
-          >
-            Servicios
-          </Link>
-          <Link
-            href="#portfolio"
+            href="#planes"
             className="block text-white mx-4 my-2 font-semibold text-lg hover:text-gray-400 transition duration-300"
           >
             Planes
           </Link>
           <Link
-            href="#contact"
+            href="#contacto"
             className="block bg-white text-black mx-4 my-2 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300"
           >
             Contacto

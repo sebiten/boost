@@ -1,7 +1,7 @@
 import React from "react";
 import PlanCard from "./PlanCard";
 import { useBoost } from "@/hooks/useBoost";
-
+import { motion } from "framer-motion";
 
 const plans = [
   {
@@ -62,25 +62,55 @@ const plans = [
 
 const PlansSection = () => {
   const { darkMode } = useBoost();
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
-    <section className={darkMode ? "bg-gray-50 py-20 pb-40" : "bg-gray-800 py-20 pb-40"}>
+    <motion.section
+      id="planes"
+      className={darkMode ? "bg-gray-50 py-20 pb-40" : "bg-gray-800 py-20 pb-40"}
+      initial="hidden"
+      animate="visible"
+      whileInView={true}
+      variants={containerVariants}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
+        <motion.h2
           className={
             darkMode
               ? "text-3xl text-gray-800 text-center mb-10"
               : "text-3xl  text-white text-center mb-10"
           }
+          variants={itemVariants}
         >
           Nuestros planes
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        </motion.h2>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          variants={containerVariants}
+        >
           {plans.map((plan, index) => (
-            <PlanCard key={index} plan={plan} />
+            <motion.div key={index} variants={itemVariants}>
+              <PlanCard plan={plan} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
