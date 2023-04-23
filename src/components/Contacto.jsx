@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useBoost } from "@/hooks/useBoost";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const { darkMode } = useBoost();
@@ -34,16 +35,21 @@ const ContactForm = () => {
 
   return (
     <section
-    id="contacto"
+      id="contacto"
       className={
         darkMode ? "bg-gray-100 text-gray-800" : "bg-gray-800 text-gray-100"
       }
     >
       <div className="flex w-full  justify-center items-center pb-24">
-        <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-gray-700 w-full max-w-5xl p-5 sm:p-8 rounded-lg shadow-lg text-white overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1.5 }}
+          className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-gray-700 w-full max-w-5xl p-5 sm:p-8 rounded-lg shadow-lg text-white overflow-hidden"
+        >
           <div className="flex flex-col md:flex-1 space-y-8 justify-between">
             <div>
-              <h1 className="text-4xl tracking-wide">Contact Us</h1>
+              <h1 className="text-4xl tracking-wide">Contacto</h1>
               <p className="pt-2 text-green-100 text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
                 molestiae cupiditate nulla facere
@@ -91,10 +97,13 @@ const ContactForm = () => {
             <div className="absolute invisible md:visible z-0 w-40 h-40 bg-gray-400 rounded-full -right-28 -top-28"></div>
             <div className="absolute invisible md:visible z-0 w-40 h-40 bg-gray-400 rounded-full -left-28 -bottom-16"></div>
             <div className="relative z-10 bg-white rounded-xl shadow-lg p-8 text-gray-600 md:w-full">
-              <form onSubmit={handleSubmit} className="flex flex-col space-y-4 -z-10">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col space-y-4 -z-10"
+              >
                 <div>
                   <label htmlFor="name" className="text-sm">
-                    Your Name
+                    Tu nombre
                   </label>
                   <input
                     type="text"
@@ -108,7 +117,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <label htmlFor="email" className="text-sm">
-                    Your Email
+                    Tu email
                   </label>
                   <input
                     type="email"
@@ -122,7 +131,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <label htmlFor="message" className="text-sm">
-                    Your Message
+                    Tu mensaje
                   </label>
                   <textarea
                     id="message"
@@ -138,12 +147,12 @@ const ContactForm = () => {
                   type="submit"
                   className="inline-block self-end bg-green-700 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm"
                 >
-                  Send Message
+                  Enviar mensaje
                 </button>
               </form>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -18,9 +18,9 @@ function Navbar() {
     <nav className="fixed w-full top-0 z-10 bg-transparent py-4 md:py-6 lg:py-2">
       <div className="w-full flex items-center justify-between">
         <motion.div
-         initial={{ opacity: 0}}
-         animate={{ opacity: 1 }}
-         transition={{ duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
           className="flex items-center p-2"
         >
           {darkMode ? (

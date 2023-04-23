@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 function Plan() {
   return (
@@ -15,7 +16,12 @@ function Plan() {
           alt="hero"
         />
       </div>
-      <div className="relative pb-10 flex flex-col items-center justify-center ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1.3 }}
+        whileInView={{ opacity: 1.5 }}
+        className="relative pb-10 flex flex-col items-center justify-center "
+      >
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center">
             <div className="w-full lg:w-6/12 px-4">
@@ -43,7 +49,7 @@ function Plan() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
