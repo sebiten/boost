@@ -4,7 +4,7 @@ export const BoostContext = createContext();
 
 export const BoostProvider = ({ children }) => {
 const [isClicked, setIsClicked] = useState(false);
-const [darkMode, setDarkMode] = useState(false);
+const [darkMode, setDarkMode] = useState(true);
 
 
   return (
